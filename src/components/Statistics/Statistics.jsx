@@ -10,14 +10,14 @@ import {
 export const UserStatistics = ({ title, stats }) => {
   return (
     <Statistics>
-      {Title && <Title>{title}</Title>}
+      {title && <Title>{title}</Title>}
 
       <List>
-        {stats.map(elem => {
+        {stats.map(({ id, label, percentage }) => {
           return (
-            <ListItem key={elem.id}>
-              <ItemLabel>{elem.label}</ItemLabel>
-              <ItemLabel>{elem.percentage}%</ItemLabel>
+            <ListItem key={id}>
+              <ItemLabel>{label}</ItemLabel>
+              <ItemLabel>{percentage}%</ItemLabel>
             </ListItem>
           );
         })}
